@@ -1,9 +1,7 @@
 
-
-print ("my name is: Noor")
-
-
 print("Welcome to my AI/ML QA journey 🚀")
+print ("AI-ML QA Journey - Day 1")
+
 
 name = "Noor"
 field = "AI/ML Quality Assurance"
@@ -51,6 +49,27 @@ elif marks >=0 and marks <=49:
     print ("Grade is F")
 else:
     print ("Invalid marks entered. Please enter marks between 0 and 100.")
+
+
+#Basic Model Evaluation using variables and types
+
+model_name = "Spam Detection Model"
+version = "1.0"
+accuracy = 0.92
+total_predictions = 150
+failed_predictions = 12
+
+
+success_rate = ((total_predictions - failed_predictions) / total_predictions) * 100
+
+print("Model Name:", model_name)
+print("Version:", version)
+print("Accuracy:", accuracy)
+print("Total Predictions:", total_predictions)
+print("Failed Predictions:", failed_predictions)
+print("Success Rate:", success_rate, "%")
+
+
 
 
 
