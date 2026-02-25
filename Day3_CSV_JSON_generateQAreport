@@ -1,0 +1,44 @@
+import csv
+import json
+
+positive_count = 0
+negative_count = 0
+total_samples = 0
+low_confidence_count = 0
+
+with open("predictions.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        total_samples += 1
+
+        prediction = row.get("prediction", "").strip()
+        confidence = float(row.get("confidence", 1))
+
+        if prediction == "Positive":
+            positive_count += 1
+        elif prediction == "Negative":
+            negative_count += 1
+
+        if confidence < 0.6:
+            print(f"Low confidence prediction found for ID {row['id']}")
+            low_confidence_count += 1
+
+# Status logic
+if positive_count + negative_count == total_samples:
+    status = "Pass"
+else:
+    status = "Fail"
+
+qa_report = {
+    "total_samples": total_samples,
+    "positive": positive_count,
+    "negative": negative_count,
+    "low_confidence_cases": low_confidence_count,
+    "status": status
+}
+
+with open("qa_report.json", "w") as json_file:
+    json.dump(qa_report, json_file, indent=4)
+
+print("QA report generated successfully!")
