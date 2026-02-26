@@ -60,6 +60,40 @@ Accessing keys and values
 
 This simulates real-world AI model output validation.
 
+
+✅ Day 4 – SQL for AI/ML QA
+Overview
+
+This project simulates real-world AI/ML QA testing using SQL.
+A sample sentiment analysis prediction dataset was created and validated using SQL queries.
+
+Concepts Practiced
+
+SELECT statements
+
+WHERE filtering
+
+ORDER BY sorting
+
+INNER JOIN and LEFT JOIN
+
+GROUP BY with COUNT()
+
+Model accuracy validation
+
+Misclassification detection
+
+Low-confidence prediction identification
+
+QA Scenarios Covered
+
+Detecting risky predictions (confidence < 0.6)
+
+Checking class distribution to identify bias
+
+Calculating correct vs incorrect predictions
+
+Tracing predictions to users using JOINs
 A function to classify predictions as Positive/Negative
 
 Converted print-based logic into return-based logic (QA-style)
