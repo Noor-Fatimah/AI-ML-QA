@@ -1,0 +1,55 @@
+What is Data Cleaning?
+
+Data cleaning means fixing problems in the dataset before using it for Machine Learning.
+
+Real-world data is rarely perfect. It usually has problems like:
+
+Missing values
+
+Duplicate records
+
+Inconsistent column formats
+
+Wrong data types
+
+If we don’t fix these issues, the ML model may learn wrong patterns.
+
+Common Data Cleaning Tasks
+1️⃣ Handle Missing Values
+
+NaN means missing data.
+
+Ways to handle missing values
+
+• Remove rows with missing values
+• Fill with average value
+• Fill with median or mode
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("dataset.csv")
+
+# Check missing values
+print(df.isnull().sum())
+
+# Fill missing values with column mean
+df.fillna(df.mean(numeric_only=True), inplace=True)
+
+2️⃣ Remove Duplicates
+# Check duplicate rows
+print(df.duplicated().sum())
+
+# Remove duplicates
+df.drop_duplicates(inplace=True)
+
+3️⃣ Standardize Column Names
+
+Sometimes column names are messy.
+# Convert column names to lowercase
+df.columns = df.columns.str.lower()
+
+# Replace spaces with underscore
+df.columns = df.columns.str.replace(" ", "_")
+
+print(df.columns)
+
